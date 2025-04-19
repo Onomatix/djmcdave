@@ -1,9 +1,9 @@
 import { Mail, Phone, MapPin, Instagram, Youtube, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <footer className="bg-dj-dark pt-12 pb-6 border-t border-white/10">
@@ -14,7 +14,7 @@ const Footer = () => {
           {/* Column 1: Logo */}
           <div className="flex justify-center sm:justify-start">
             <img
-              src={logo}
+              src={`${baseUrl}logo.png`}
               alt="DJMC DAVE Logo"
               className="w-[170px] h-[170px] object-contain"
             />

@@ -1,5 +1,4 @@
 import { ChevronDown, PlayCircle, Calendar, Music } from 'lucide-react';
-import logo from '../logo.png';
 
 const HomeHero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -8,6 +7,7 @@ const HomeHero = () => {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const baseUrl = import.meta.env.BASE_URL;
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden" id="home">
@@ -18,7 +18,7 @@ const HomeHero = () => {
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="mb-8 flex justify-center animate-fade-in">
           <img 
-            src={logo}
+            src={`${baseUrl}logo.png`}
             alt="DJMC Dave Logo" 
             className="w-3/4 max-w-md md:max-w-lg lg:max-w-xl object-contain"
           />

@@ -30,82 +30,42 @@ const queryClient = new QueryClient({
   },
 });
 
-const App = () => (
-  <HelmetProvider>
+function App() {
+  // Get the base URL from the environment or default to '/'
+  const basename = import.meta.env.BASE_URL;
+
+  return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <ErrorBoundary>
-          <BrowserRouter>
-            <Navbar />
-            <Suspense fallback={<LoadingSpinner />}>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route
-                  path="/music"
-                  element={
-                    <ErrorBoundary>
-                      <MusicPage />
-                    </ErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/videos"
-                  element={
-                    <ErrorBoundary>
-                      <VideosPage />
-                    </ErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/gallery"
-                  element={
-                    <ErrorBoundary>
-                      <GalleryPage />
-                    </ErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/about"
-                  element={
-                    <ErrorBoundary>
-                      <AboutPage />
-                    </ErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/academy"
-                  element={
-                    <ErrorBoundary>
-                      <AcademyPage />
-                    </ErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/events"
-                  element={
-                    <ErrorBoundary>
-                      <EventsPage />
-                    </ErrorBoundary>
-                  }
-                />
-                <Route
-                  path="/contact"
-                  element={
-                    <ErrorBoundary>
-                      <ContactPage />
-                    </ErrorBoundary>
-                  }
-                />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-            <Footer />
-          </BrowserRouter>
-        </ErrorBoundary>
-      </TooltipProvider>
+      <HelmetProvider>
+        <BrowserRouter basename={basename}>
+          <TooltipProvider>
+            <ErrorBoundary>
+              <div className="flex flex-col min-h-screen">
+                <Navbar />
+                <main className="flex-grow">
+                  <Suspense fallback={<LoadingSpinner />}>
+                    <Routes>
+                      <Route path="/" element={<Index />} />
+                      <Route path="/music" element={<MusicPage />} />
+                      <Route path="/videos" element={<VideosPage />} />
+                      <Route path="/gallery" element={<GalleryPage />} />
+                      <Route path="/about" element={<AboutPage />} />
+                      <Route path="/academy" element={<AcademyPage />} />
+                      <Route path="/events" element={<EventsPage />} />
+                      <Route path="/contact" element={<ContactPage />} />
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </Suspense>
+                </main>
+                <Footer />
+              </div>
+            </ErrorBoundary>
+          </TooltipProvider>
+        </BrowserRouter>
+      </HelmetProvider>
+      <Toaster />
     </QueryClientProvider>
-  </HelmetProvider>
-);
+  );
+}
 
 export default App;

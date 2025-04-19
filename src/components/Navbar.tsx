@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Instagram, Youtube, Facebook, Music } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const baseUrl = import.meta.env.BASE_URL;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +48,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img
-            src={logo}
+            src={`${baseUrl}logo.png`}
             alt="DJMC Dave Logo"
             className="h-6 sm:h-8 md:h-10 w-auto object-contain"
           />
@@ -109,8 +109,8 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-dj-dark/95 backdrop-blur-lg p-4 md:hidden max-h-[80vh] overflow-y-auto">
-            <nav className="flex flex-col space-y-4 py-4">
+          <div className="absolute top-full left-0 right-0 bg-dj-dark/95 backdrop-blur-md py-4 md:hidden">
+            <nav className="flex flex-col space-y-4 px-4">
               <Link to="/" className={`nav-link ${location.pathname === '/' ? 'text-dj-pink' : ''}`}>Home</Link>
               <Link to="/music" className={`nav-link ${location.pathname === '/music' ? 'text-dj-pink' : ''}`}>Music</Link>
               <Link to="/videos" className={`nav-link ${location.pathname === '/videos' ? 'text-dj-pink' : ''}`}>Videos</Link>
