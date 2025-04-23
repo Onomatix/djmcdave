@@ -54,11 +54,11 @@ const AboutSection = () => {
               </p>
             </div>
             
-            <div className="mt-8">
+           {/*  <div className="mt-8">
               <Link to="/about" className="accent-btn">
                 Read Full Bio
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
         

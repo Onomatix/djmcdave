@@ -60,7 +60,7 @@ const Navbar = () => {
           <Link to="/music" className={`nav-link ${location.pathname === '/music' ? 'text-dj-pink' : ''}`}>Music</Link>
           <Link to="/videos" className={`nav-link ${location.pathname === '/videos' ? 'text-dj-pink' : ''}`}>Videos</Link>
           <Link to="/gallery" className={`nav-link ${location.pathname === '/gallery' ? 'text-dj-pink' : ''}`}>Gallery</Link>
-          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'text-dj-pink' : ''}`}>About</Link>
+          {/* <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'text-dj-pink' : ''}`}>About</Link> */}
           <Link to="/academy" className={`nav-link ${location.pathname === '/academy' ? 'text-dj-pink' : ''}`}>DJ Academy</Link>
           <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'text-dj-pink' : ''}`}>Events</Link>
           <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'text-dj-pink' : ''}`}>Contact</Link>

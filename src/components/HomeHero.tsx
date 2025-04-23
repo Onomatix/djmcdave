@@ -29,7 +29,7 @@ const HomeHero = () => {
         </p>
         
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in" style={{ animationDelay: '400ms' }}>
+        {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in" style={{ animationDelay: '400ms' }}>
           <button 
             onClick={() => scrollToSection('music')} 
             className="w-full sm:w-auto accent-btn"
@@ -51,7 +51,7 @@ const HomeHero = () => {
             <Calendar className="mr-2" size={18} />
             Events
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll Indicator */}

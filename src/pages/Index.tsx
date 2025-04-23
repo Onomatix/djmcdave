@@ -19,12 +19,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-dj-dark">
       <HomeHero />
-      <MusicSection />
+     {/*  <MusicSection />
       <VideoSection />
-      <GallerySection />
+      <GallerySection /> */}
       <AboutSection />
-      <AcademySection />
-      <EventsSection />
+     {/*  <AcademySection />
+      <EventsSection /> */}
       <ContactSection />
       <ScrollToTop />
     </div>
