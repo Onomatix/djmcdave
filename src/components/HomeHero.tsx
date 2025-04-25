@@ -1,5 +1,7 @@
 import { ChevronDown, PlayCircle, Calendar, Music } from 'lucide-react';
 import heroImage from '../assets/hero/hero.webp';
+import mobileHeroImage from '/share-image.png';
+import styles from './HomeHero.module.css';
 
 const HomeHero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -13,10 +15,8 @@ const HomeHero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden" id="home">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      ></div>
+      <div className={`${styles['hero-background']} h-screen bg-cover bg-center bg-no-repeat`}>
+      </div>
 
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 z-1 bg-gradient-to-b from-dj-dark/50 to-dj-dark/40"></div>
