@@ -1,4 +1,5 @@
 import { ChevronDown, PlayCircle, Calendar, Music } from 'lucide-react';
+import heroImage from '../assets/hero/hero.webp';
 
 const HomeHero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -14,7 +15,7 @@ const HomeHero = () => {
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url("/src/assets/hero/hero.webp")' }}
+        style={{ backgroundImage: `url(${heroImage})` }}
       ></div>
 
       {/* Background Gradient Overlay */}
