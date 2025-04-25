@@ -1,16 +1,18 @@
 import { ChevronDown, PlayCircle, Calendar, Music } from 'lucide-react';
 import heroImage from '../assets/hero/hero.webp';
 import mobileHeroImage from '../assets/hero/hero_mobile.webp';
-import styles from './HomeHero.module.css';
 import { useState, useEffect } from 'react';
 
 const HomeHero = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
   
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
+    
+    // Set initial value
+    handleResize();
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -23,19 +25,21 @@ const HomeHero = () => {
     }
   };
   const baseUrl = import.meta.env.BASE_URL;
-  const backgroundImage = isMobile ? mobileHeroImage : heroImage;
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden" id="home">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-      </div>
+        style={{ 
+          backgroundImage: `url(${isMobile ? mobileHeroImage : heroImage})`,
+          width: '100%',
+          height: '100%'
+        }}
+      />
 
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 z-1 bg-gradient-to-b from-dj-dark/50 to-dj-dark/40"></div>
+      <div className="absolute inset-0 z-1 bg-gradient-to-b from-dj-dark/50 to-dj-dark/40" />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 text-center">
@@ -55,7 +59,7 @@ const HomeHero = () => {
       {/* Scroll Indicator */}
       <div className="scroll-indicator animate-fade-in hidden sm:flex" style={{ animationDelay: '600ms' }}>
         <div className="mouse">
-          <div className="mouse-wheel"></div>
+          <div className="mouse-wheel" />
         </div>
         <p className="scroll-text">Scroll Down</p>
       </div>
