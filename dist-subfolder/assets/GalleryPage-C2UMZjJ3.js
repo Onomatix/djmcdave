@@ -1,1 +1,0 @@
-import{j as r}from"./ui-vendor-chjt69rB.js";import{S as e,G as t}from"./index-DHvxZv0_.js";import{r as s}from"./react-vendor-BRyFoELK.js";const m=()=>(s.useEffect(()=>{document.title="Gallery | DJ MC Dave"},[]),r.jsxs("div",{className:"pt-20",children:[r.jsx(e,{}),r.jsx(t,{})]}));export{m as default};

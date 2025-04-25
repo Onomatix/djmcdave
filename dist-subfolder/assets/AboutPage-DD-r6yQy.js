@@ -1,1 +1,0 @@
-import{j as t}from"./ui-vendor-chjt69rB.js";import{S as o,A as s}from"./index-DHvxZv0_.js";import{r}from"./react-vendor-BRyFoELK.js";const c=()=>(r.useEffect(()=>{document.title="About | DJ MC Dave"},[]),t.jsxs("div",{className:"pt-20",children:[t.jsx(o,{}),t.jsx(s,{})]}));export{c as default};
