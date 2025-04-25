@@ -11,8 +11,14 @@ const HomeHero = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden" id="home">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-dj-dark to-dj-dark/80"></div>
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: 'url("/src/assets/hero/hero.webp")' }}
+      ></div>
+
+      {/* Background Gradient Overlay */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-b from-dj-dark/50 to-dj-dark/40"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 text-center">
@@ -27,31 +33,6 @@ const HomeHero = () => {
         <p className="text-lg sm:text-xl md:text-2xl text-white/80 mb-6 sm:mb-10 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '200ms' }}>
           Professional DJ, Producer & Founder of SoundKontrols DJ Academy
         </p>
-        
-        {/* CTA Buttons */}
-        {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-in" style={{ animationDelay: '400ms' }}>
-          <button 
-            onClick={() => scrollToSection('music')} 
-            className="w-full sm:w-auto accent-btn"
-          >
-            <Music className="mr-2" size={18} />
-            Listen Now
-          </button>
-          <button 
-            onClick={() => scrollToSection('videos')} 
-            className="w-full sm:w-auto accent-btn-outline"
-          >
-            <PlayCircle className="mr-2" size={18} />
-            Watch Videos
-          </button>
-          <button 
-            onClick={() => scrollToSection('events')} 
-            className="w-full sm:w-auto accent-btn-outline"
-          >
-            <Calendar className="mr-2" size={18} />
-            Events
-          </button>
-        </div> */}
       </div>
 
       {/* Scroll Indicator */}
