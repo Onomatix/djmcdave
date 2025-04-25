@@ -1,9 +1,21 @@
 import { ChevronDown, PlayCircle, Calendar, Music } from 'lucide-react';
 import heroImage from '../assets/hero/hero.webp';
-import mobileHeroImage from '/share-image.png';
+import mobileHeroImage from '../assets/hero/hero_mobile.webp';
 import styles from './HomeHero.module.css';
+import { useState, useEffect } from 'react';
 
 const HomeHero = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -11,11 +23,15 @@ const HomeHero = () => {
     }
   };
   const baseUrl = import.meta.env.BASE_URL;
+  const backgroundImage = isMobile ? mobileHeroImage : heroImage;
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden" id="home">
       {/* Background Image */}
-      <div className={`${styles['hero-background']} h-screen bg-cover bg-center bg-no-repeat`}>
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
       </div>
 
       {/* Background Gradient Overlay */}
