@@ -16,7 +16,7 @@ const Footer = () => {
             <img
               src={`${baseUrl}logo.png`}
               alt="DJMC DAVE Logo"
-              className="w-[170px] h-[170px] object-contain"
+              className="w-[300px] h-[150px] object-contain"
             />
           </div>
 
@@ -74,8 +74,20 @@ const Footer = () => {
         </div>
 
         {/* Bottom line */}
-        <div className="mt-10 border-t border-white/10 pt-4 text-center text-white/50 text-sm">
-          © {currentYear} DJMC DAVE. All rights reserved.
+        <div className="mt-10 border-t border-white/10 pt-4">
+          {/* Powered by QC section */}
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <span className="text-white/70 text-sm">POWERED BY</span>
+            <img
+              src={`${baseUrl}qc.png`}
+              alt="QC Logo"
+              className="h-9 w-[200px] h-[150px] object-contain"
+            />
+          </div>
+          
+          <div className="text-center text-white/50 text-sm">
+            © {currentYear} DJMC DAVE. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>

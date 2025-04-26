@@ -39,7 +39,7 @@ const HomeHero = () => {
       />
 
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 z-1 bg-gradient-to-b from-dj-dark/50 to-dj-dark/40" />
+      <div className="absolute inset-0 z-1 bg-gradient-to-b from-dj-dark/30 to-dj-dark/20" />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 text-center">
