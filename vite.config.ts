@@ -9,6 +9,16 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    headers: {
+      // Basic CORS headers for development
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+      // Allow framing for widgets
+      'X-Frame-Options': 'SAMEORIGIN',
+      // Production-ready Permissions Policy for Mixcloud embeds
+      'Permissions-Policy': 'encrypted-media=(self "https://player-widget.mixcloud.com" "https://*.mixcloud.com"), autoplay=(self "https://player-widget.mixcloud.com" "https://*.mixcloud.com"), picture-in-picture=*, fullscreen=*'
+    }
   },
   build: {
     outDir: 'dist',
