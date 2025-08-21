@@ -1,11 +1,7 @@
 import { Smartphone, Instagram, Youtube, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ContactSection = () => {
-  const handleWhatsAppClick = () => {
-    const phoneNumber = "+60162169474";
-    const message = encodeURIComponent("Hi DJ MC Dave, I'd like to book you for an event!");
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-  };
 
   return (
     <section id="contact" className="content-section">
@@ -24,13 +20,13 @@ const ContactSection = () => {
                 <h4 className="text-lg font-semibold text-white mb-2">Booking & Inquiries</h4>
                 <p className="text-white/70">dave.ramana@soundkontrols.com</p>
                 <p className="text-white/70">+60162169474</p>
-                <button
-                  onClick={handleWhatsAppClick}
+                <Link
+                  to="/contact"
                   className="mt-3 flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-md transition-colors"
                 >
                   <Smartphone size={18} />
                   <span>Contact via WhatsApp</span>
-                </button>
+                </Link>
               </div>
 
               <div>
